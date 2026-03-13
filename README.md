@@ -41,35 +41,34 @@ This project addresses these limitations by combining **content-based embeddings
 - JavaScript
 
 ---
+## Project Structure
 
-# Project Structure
+```
 conversational-movie-recommender/
 
-├── src/ # Core ML pipeline and recommendation modules
-│ ├── init.py # Makes src a Python package
-│ ├── data_loader.py # Load movies and ratings datasets
-│ ├── preprocess.py # Data preprocessing
-│ ├── embeddings.py # Generate movie embeddings
-│ ├── vector_search.py # Vector similarity search
-│ ├── recommender.py # Hybrid recommendation logic
-│ ├── ranking.py # Ranking functions
-│ ├── query_parser.py # Parse user queries
-│ └── pipeline.py # End-to-end recommendation pipeline
-│
-├── app.py # FastAPI application
-│
-├── static/ # Frontend interface
-│ └── index.html
-│
-├── data/ # Input datasets
-│ ├── movies.csv
-│ ├── ratings.csv
-│ └── processed_movies.csv
-│
-├── venv/ # Python virtual environment (ignored in Git)
-│
-├── requirements.txt # Project dependencies
+├── src/
+│   ├── __init__.py
+│   ├── data_loader.py
+│   ├── preprocess.py
+│   ├── embeddings.py
+│   ├── vector_search.py
+│   ├── recommender.py
+│   ├── ranking.py
+│   ├── query_parser.py
+│   └── pipeline.py
+
+├── app.py
+├── static/
+│   └── index.html
+
+├── data/
+│   ├── movies.csv
+│   ├── ratings.csv
+│   └── processed_movies.csv
+
+├── requirements.txt
 └── README.md
+```
 
 
 # Installation
