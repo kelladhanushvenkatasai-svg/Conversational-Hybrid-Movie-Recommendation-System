@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Movie Recommender</title>
+</head>
+<body>
+  <h1>🎬 Movie Recommender</h1>
+  <input type="text" id="query" placeholder="Type your query" />
+  <button onclick="getRecommendations()">Search</button>
+
+  <ul id="results"></ul>
+
+  <script>
+    async function getRecommendations() {
+      const query = document.getElementById('query').value;
+      const response = await fetch("/recommend", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({query: query, top_k: 5})
+      });
+      const data = await response.json();
+      const results = document.getElementById('results');
+      results.innerHTML = "";
+      data.forEach((movie, index) => {
+        const li = document.createElement("li");
+        li.textContent = `${index+1}. ${movie.title} (Rating: ${movie.avg_rating.toFixed(1)}, Score: ${movie.score.toFixed(2)})`;
+        results.appendChild(li);
+      });
+    }
+  </script>
+</body>
+</html>

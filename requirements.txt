@@ -1,0 +1,8 @@
+pandas
+numpy
+scikit-learn
+scentence-transformers
+faiss-cpu == 1.7.4
+fastapi
+uvicorn
+python-dotenv
